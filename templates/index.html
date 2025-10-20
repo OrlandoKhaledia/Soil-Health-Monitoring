@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Soil Health Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.css" />
+  <style>
+    /* Login Page Background */
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+      background-size: cover;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* Overlay for readability */
+    #auth::before {
+      content: '';
+      position: absolute;
+      top:0; left:0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.4);
+      z-index: -1;
+      border-radius: 0;
+    }
+
+    /* Login Form */
+    .auth-container {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      color: white;
+      text-align: center;
+      z-index: 2;
+    }
+
+    .auth-container input {
+      margin: 5px;
+      padding: 10px;
+      width: 250px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .auth-buttons {
+      margin-top: 10px;
+    }
+
+    .auth-buttons button {
+      margin: 0 5px;
+      padding: 8px 15px;
+      border: none;
+      border-radius: 8px;
+      background-color: #2a7a2e;
+      color: white;
+      cursor: pointer;
+    }
+
+    .auth-buttons button:hover {
+      background-color: #239025;
+    }
+
+    #status {
+      margin-top: 8px;
+      font-weight: bold;
+    }
+
+    /* Services & About Us */
+    .info-section {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      max-width: 900px;
+      color: white;
+      text-align: center;
+    }
+
+    .info-section h3 {
+      margin-bottom: 5px;
+      font-size: 1.8em;
+      text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
+    }
+
+    .info-section p {
+      font-size: 1em;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+    }
+
+    .info-section .services {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 15px;
+    }
+
+    .info-section .service-item {
+      background: rgba(0,0,0,0.5);
+      padding: 10px 20px;
+      border-radius: 8px;
+      min-width: 150px;
+      transition: transform 0.3s;
+    }
+
+    .info-section .service-item:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <!-- Services & About Us -->
+  <div class="info-section">
+    <h3>About Us</h3>
+    <p>We help farmers, NGOs, and policymakers monitor land health using AI and real-time satellite data.</p>
+
+    <h3>Our Services</h3>
+    <div class="services">
+      <div class="service-item">NDVI Analysis</div>
+      <div class="service-item">Land Degradation Reports</div>
+      <div class="service-item">Real-time Insights</div>
+      <div class="service-item">Ecosystem Recommendations</div>
+    </div>
+  </div>
+
+  <!-- Login Form -->
+  <div id="auth" class="auth-container">
+    <h2>Soil Health Monitoring</h2>
+    <input id="email" placeholder="Email" type="email" />
+    <input id="password" placeholder="Password" type="password" />
+    <div class="auth-buttons">
+      <button id="signupBtn">Sign Up</button>
+      <button id="loginBtn">Log In</button>
+    </div>
+    <p id="status"></p>
+  </div>
+
+  <div id="map-container">
+    <div id="map"></div>
+    <div id="bottom-panel">
+      <button id="computeBtn">Compute NDVI</button>
+      <button id="chartBtn">Show Chart</button>
+      <button id="reportBtn">Download Report</button>
+      <button id="logoutBtn" style="background-color:#f44336; color:white; border:none; padding:6px 12px; cursor:pointer;">Logout</button>
+      <p id="result"></p>
+    </div>
+  </div>
+
+  <!-- Chart Modal -->
+  <div id="chartModal" class="modal">
+    <div class="modal-content">
+      <span id="closeChart">&times;</span>
+      <canvas id="trendChart"></canvas>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</body>
+</html>

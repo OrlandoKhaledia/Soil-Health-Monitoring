@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Soil Health Report</title>
+    <style>
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            margin: 40px;
+            color: #222;
+            background: #fafafa;
+        }
+        .report-container {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            padding: 30px;
+        }
+        h1, h2 {
+            color: #2b6a2b;
+        }
+        .section {
+            margin-bottom: 25px;
+        }
+        .key {
+            font-weight: 600;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f0f5f0;
+            text-align: left;
+        }
+        .ai-box {
+            background: #f8fff8;
+            border-left: 5px solid #2b6a2b;
+            padding: 15px;
+            margin-top: 10px;
+        }
+        .footer {
+            text-align: center;
+            font-size: 12px;
+            color: #777;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+<div class="report-container">
+    <h1>Soil Health Report</h1>
+    <p><strong>Parcel Name:</strong> {{ parcel.name }}</p>
+    <p><strong>Parcel ID:</strong> {{ parcel.id }}</p>
+
+    <div class="section">
+        <h2>AI Insight</h2>
+        {% set ai_data = parcel.ai_insight %}
+        {% if ai_data %}
+            <div class="ai-box">
+                <p><strong>Status:</strong> {{ ai_data.status or 'N/A' }}</p>
+                <p><strong>Degradation Score:</strong> {{ ai_data.degradation_score or 'N/A' }}</p>
+                <p><strong>Recommendation:</strong> {{ ai_data.recommendation or 'N/A' }}</p>
+            </div>
+        {% else %}
+            <p>No AI data available for this parcel.</p>
+        {% endif %}
+    </div>
+
+    <div class="section">
+        <h2>Geospatial Information</h2>
+        <table>
+            <tr><th>Geometry</th><td>{{ parcel.geom }}</td></tr>
+        </table>
+    </div>
+
+    <div class="footer">
+        <p>Generated automatically by the Soil Health Monitoring Dashboard</p>
+        <p>&copy; {{ now().year }} Soil Intelligence System</p>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "soil-health-dashboard",
+  "private_key_id": "219dbbf547a819f8ac36c68d9e5ec6780e913240",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDEcxOvjBTwWGcO\nDP11fbuNwtTXhruPsdQ4v2HTFpZ9rdBOK1DO+KTFdSbgUx4iblmTR6+T/I+CBhah\nzAxTd2bVwmIju+99uGTU+p4e+bW2yy3yHI7ZpFOBvLQsTgNskmlIHCRw+irsYF5r\nVc8gPBjaIaI33XKNjqN4LWTS5oP5lkUdawAXuCXuLYE7+E4HKXM6GRpy2s3lOf4v\noA31aebKVvs8O1SSUyFB7hc4iRROy+ZURMGhT2CG1iRIlMX6ydI5cKyeChz+3O0c\nXp7kemNthHIVBurv23M5WC9oZ5hl7BMZpOPkgJqZkmcDxSqym9iphRFvcIGYWJrH\nvb+6xJ25AgMBAAECggEAEeqQ3AzBiB334B8tKn76EPa45KMkDfng6gACUvcXaITm\nn4pxxz6EAIIrtn++GtPHlZgPGkcJa4lUnRL3+NDF7y7YNnwYXnXntEjbDOYnPXGQ\nUilqmczT1Nw57mR7CXbc5Tez1x3ptj8fvVhJGJ6CgbpZihDHNsPQgtBZBqcBWEzE\nAtdaBYIxs+o4GOX9Dk7X5o2HaTWd9eHADVocUZnSJ4K87JZPfjX6qIpne1O3oypy\n/1IkWUI6OdFuKTIU8Nv2Vvpl84Mm+WvBBSCQuMz5W/5OGuXlrfRw+xsGNpoMKQBh\nf3hp+PAjKc7L9j9rojHvtm86JQ0DAfTPeUNUq2VOAQKBgQD5p6n97+/autLyAfp5\n3zXMORxl7YQLjOTX+iYr0zO/hIK7aaC8tIXYnVENf5zYoVF1q2KBQGcNcxj2BQoo\n2bH6tPdbJnndur85YMiFcEMYzkyOj+BxRbyX30Uy8UBvvSLnVHYrljHki3r4Fbfk\nSM2Ks9H2tijMB4KerPPpK828QQKBgQDJcT283G8Gc9FJPGLpWDn4wEBWLPpHsu6o\naQmYTjxU35iyH9Fe1hJ2EHV2GI44jlYnxX0kWZoCS9G9jI7DNVs0zj1moRreqHAB\nDCs+L+nun2dtQWRMWxep/L7aTWyu+YqozMRwCQCgTKBUoT1hEhBaiUEmRrNtI+HJ\npZGaplnjeQKBgFzSsQrAnk6WLf5bK/UKP+dpyJxBPlpJDYEb+ftLcK8hprXl5SSk\nfit2+n7pVrjY6f+1NE/YUTiX9czrPMbJgjoz9NBIMwF1AMplqMisX9YmRiKvbgTP\np/pTwlfZiVrCWOrn5XP5SR2vmo4JDTFsvDd4+nUfb3XEyRUUOzAT4E/BAoGAeTGV\nKDwi2+nwPzSCecsnzZ2012PmDB798PqI2EYxjAqeLoRwDbOTlc6fLLbnUeVotjLd\n8HGr87ez72tSNOW0AtgWHtnMdas2/5pXpeljv7nNmvDdrAad/RpfpK0yNy9RGe9g\nO9teshKH34LGj9EzX5T2SlX8+yu8Wvou2LE+oVkCgYARf5+izJYt9GR63ESQ9C++\n/ADsVZg2zHXY2n26RLBpjmO/d5WClGPPVLkyz6JhHGSuJKuKxRoGkswWZlMj08Db\nCJJN/n2EaHmPCOF4ac/LyJVFIJn//VYddQwuSyMEGypHZ8INzjSbogmvDPt9bHaj\nQQQ6t6HjPRV5nuqwUU88gQ==\n-----END PRIVATE KEY-----\n",
+  "client_email": "soil-health-dashboard-sa@soil-health-dashboard.iam.gserviceaccount.com",
+  "client_id": "111461368332898129957",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/soil-health-dashboard-sa%40soil-health-dashboard.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
